@@ -6,7 +6,28 @@ grade_calculator::grade_calculator(QWidget *parent) :
     ui(new Ui::grade_calculator)
 {
     ui->setupUi(this);
+    //Update overall based on signal of each spinbox
     QObject::connect(ui->spinBox,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_2,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_3,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_4,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_5,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_6,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_7,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_8,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_9,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_10,SIGNAL(valueChanged(int)),
+                     this, SLOT(update_overall(int)));
+    QObject::connect(ui->spinBox_11,SIGNAL(valueChanged(int)),
                      this, SLOT(update_overall(int)));
 
     //Connect spinBox to the horizontalSlider
@@ -63,7 +84,17 @@ grade_calculator::~grade_calculator()
 }
 
 void grade_calculator::update_overall(int unused){
-    double score = static_cast<double>(unused);
+    double score; //= static_cast<double>(unused);
+    double h1 = ui->spinBox->value();
+    double h2 = ui->spinBox_2->value();
+    double h3 = ui->spinBox_3->value();
+    double h4 = ui->spinBox_4->value();
+    double h5 = ui->spinBox_5->value();
+    double h6 = ui->spinBox_6->value();
+    double h7 = ui->spinBox_7->value();
+    double h8 = ui->spinBox_8->value();
+    score = (h1 + h2 + h3 + h4 + h5 + h6 + h7 + h8) * 0.25;
+
     ui->label_14->setText(QString::number(score));
     return;
 }

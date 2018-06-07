@@ -49,6 +49,21 @@
       <height>20</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>Pic 10A</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pic 10B Intermediate Programming</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pic 10C</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
