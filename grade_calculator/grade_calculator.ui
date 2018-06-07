@@ -83,14 +83,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QSlider" name="horizontalSlider_2">
+        <widget class="QSlider" name="horizontalSlider">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_7"/>
+        <widget class="QSpinBox" name="spinBox"/>
        </item>
       </layout>
      </item>
@@ -106,14 +106,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QSlider" name="horizontalSlider_3">
+          <widget class="QSlider" name="horizontalSlider_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_8"/>
+          <widget class="QSpinBox" name="spinBox_2"/>
          </item>
         </layout>
        </item>
@@ -131,14 +131,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QSlider" name="horizontalSlider_4">
+          <widget class="QSlider" name="horizontalSlider_3">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_6"/>
+          <widget class="QSpinBox" name="spinBox_3"/>
          </item>
         </layout>
        </item>
@@ -156,14 +156,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QSlider" name="horizontalSlider_5">
+          <widget class="QSlider" name="horizontalSlider_4">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_5"/>
+          <widget class="QSpinBox" name="spinBox_4"/>
          </item>
         </layout>
        </item>
@@ -181,14 +181,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QSlider" name="horizontalSlider_6">
+          <widget class="QSlider" name="horizontalSlider_5">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_4"/>
+          <widget class="QSpinBox" name="spinBox_5"/>
          </item>
         </layout>
        </item>
@@ -206,14 +206,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QSlider" name="horizontalSlider_7">
+          <widget class="QSlider" name="horizontalSlider_6">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_3"/>
+          <widget class="QSpinBox" name="spinBox_6"/>
          </item>
         </layout>
        </item>
@@ -231,14 +231,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QSlider" name="horizontalSlider_8">
+          <widget class="QSlider" name="horizontalSlider_7">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_2"/>
+          <widget class="QSpinBox" name="spinBox_7"/>
          </item>
         </layout>
        </item>
@@ -256,14 +256,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="QSlider" name="horizontalSlider">
+          <widget class="QSlider" name="horizontalSlider_8">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox"/>
+          <widget class="QSpinBox" name="spinBox_8"/>
          </item>
         </layout>
        </item>
