@@ -1,6 +1,6 @@
 #include "grade_calculator.h"
 #include "ui_grade_calculator.h"
-#include <QDebug>
+//#include <QDebug>
 
 grade_calculator::grade_calculator(QWidget *parent) :
     QMainWindow(parent),
@@ -118,7 +118,6 @@ void grade_calculator::update_overall(int unused){
     if(ui->radioButton->isChecked()){
         score = score + (m1+m2)*0.2;
         score = score + final*0.35;
-        qDebug() << "One checked";
     }
     if(ui->radioButton_2->isChecked()){
         if(m1>=m2){
@@ -127,7 +126,6 @@ void grade_calculator::update_overall(int unused){
             score = score + m2*0.3;
         }
         score += final*0.44;
-        qDebug() << "Two checked";
     }
     ui->label_14->setText(QString::number(score));
     return;
