@@ -20,6 +20,8 @@ signals:
 
 public slots:
     void update_overall(int unused);
+    void button1();
+    void button2();
 
 private:
     Ui::grade_calculator *ui;

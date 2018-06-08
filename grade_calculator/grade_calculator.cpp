@@ -1,5 +1,6 @@
 #include "grade_calculator.h"
 #include "ui_grade_calculator.h"
+#include <QDebug>
 
 grade_calculator::grade_calculator(QWidget *parent) :
     QMainWindow(parent),
@@ -7,8 +8,11 @@ grade_calculator::grade_calculator(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->radioButton->setChecked(true);
+
+    QObject::connect(ui->radioButton,SIGNAL(clicked()),
+                     this, SLOT(button1()));
     QObject::connect(ui->radioButton_2,SIGNAL(clicked(bool)),
-                     this, SLOT(update_overall(int)));
+                     this, SLOT(button2()));
 
     //Update overall based on signal of each spinbox
     QObject::connect(ui->spinBox,SIGNAL(valueChanged(int)),
@@ -81,7 +85,6 @@ grade_calculator::grade_calculator(QWidget *parent) :
     QObject::connect(ui->horizontalSlider_11,SIGNAL(valueChanged(int)),
                      ui->spinBox_11, SLOT(setValue(int)));
 
-    emit compute_overall();
 }
 
 grade_calculator::~grade_calculator()
@@ -89,8 +92,17 @@ grade_calculator::~grade_calculator()
     delete ui;
 }
 
+void grade_calculator::button1(){
+    int unused;
+    update_overall(unused);
+}
+void grade_calculator::button2(){
+    int unused;
+    update_overall(unused);
+}
+
 void grade_calculator::update_overall(int unused){
-    double score; //= static_cast<double>(unused);
+    double score;
     double h1 = ui->spinBox->value();
     double h2 = ui->spinBox_2->value();
     double h3 = ui->spinBox_3->value();
@@ -106,6 +118,7 @@ void grade_calculator::update_overall(int unused){
     if(ui->radioButton->isChecked()){
         score = score + (m1+m2)*0.2;
         score = score + final*0.35;
+        qDebug() << "One checked";
     }
     if(ui->radioButton_2->isChecked()){
         if(m1>=m2){
@@ -114,6 +127,7 @@ void grade_calculator::update_overall(int unused){
             score = score + m2*0.3;
         }
         score += final*0.44;
+        qDebug() << "Two checked";
     }
     ui->label_14->setText(QString::number(score));
     return;
