@@ -80,6 +80,10 @@ grade_calculator::~grade_calculator()
     delete ui;
 }
 
+//void grade_calculator::clearBoxValue(int){
+
+//}
+
 void grade_calculator::SpinBoxChanged(int value){
      QSpinBox* sp = qobject_cast<QSpinBox*>(sender());
      update_overall(value);
