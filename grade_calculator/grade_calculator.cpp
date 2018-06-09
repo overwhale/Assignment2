@@ -8,35 +8,16 @@ grade_calculator::grade_calculator(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->radioButton->setChecked(true);
+    QList<QSpinBox*> spinBoxes= findChildren<QSpinBox*>();
+    QSpinBox* spinBox;
+    foreach(spinBox,spinBoxes){
+        connect(spinBox,SIGNAL(valueChanged(int)), this, SLOT(SpinBoxChanged(int)));
+    }
 
     QObject::connect(ui->radioButton,SIGNAL(clicked()),
                      this, SLOT(button1()));
     QObject::connect(ui->radioButton_2,SIGNAL(clicked(bool)),
                      this, SLOT(button2()));
-
-    //Update overall based on signal of each spinbox
-    QObject::connect(ui->spinBox,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_2,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_3,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_4,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_5,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_6,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_7,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_8,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_9,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_10,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
-    QObject::connect(ui->spinBox_11,SIGNAL(valueChanged(int)),
-                     this, SLOT(update_overall(int)));
 
     //Connect spinBox to the horizontalSlider
     QObject::connect(ui->spinBox,SIGNAL(valueChanged(int)),
@@ -85,11 +66,23 @@ grade_calculator::grade_calculator(QWidget *parent) :
     QObject::connect(ui->horizontalSlider_11,SIGNAL(valueChanged(int)),
                      ui->spinBox_11, SLOT(setValue(int)));
 
+    //For combo box
+    foreach(spinBox,spinBoxes){
+        connect(ui->comboBox,SIGNAL(currentIndexChanged(int)),
+                     spinBox, SLOT(setValue(int)));
+    }
+
 }
+
 
 grade_calculator::~grade_calculator()
 {
     delete ui;
+}
+
+void grade_calculator::SpinBoxChanged(int value){
+     QSpinBox* sp = qobject_cast<QSpinBox*>(sender());
+     update_overall(value);
 }
 
 void grade_calculator::button1(){

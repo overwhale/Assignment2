@@ -51,7 +51,7 @@
     </property>
     <item>
      <property name="text">
-      <string>Pic 10A</string>
+      <string>Pic 10A Introduction to Programming</string>
      </property>
     </item>
     <item>
@@ -61,7 +61,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Pic 10C</string>
+      <string>Pic 10C Advanced Programming</string>
      </property>
     </item>
    </widget>

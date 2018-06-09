@@ -2,6 +2,8 @@
 #define GRADE_CALCULATOR_H
 
 #include <QMainWindow>
+#include <QList>
+#include <QObject>
 
 namespace Ui {
 class grade_calculator;
@@ -22,7 +24,7 @@ public slots:
     void update_overall(int unused);
     void button1();
     void button2();
-
+    void SpinBoxChanged(int value);
 private:
     Ui::grade_calculator *ui;
 };
